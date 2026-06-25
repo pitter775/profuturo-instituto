@@ -179,12 +179,12 @@ export function InstitutionalLanding() {
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
           >
-            <span className="relative block h-12 w-16">
+            <span className="relative block h-14 w-44 sm:w-52">
               <Image
-                src="/images/logo-instituto-pro-futuro.png"
+                src="/images/logo-instituto-pro-futuro-white.png"
                 alt="Instituto Pro Futuro"
                 fill
-                sizes="64px"
+                sizes="(min-width: 640px) 208px, 176px"
                 className="object-contain"
                 priority
               />
