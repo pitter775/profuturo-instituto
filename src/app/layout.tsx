@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Fredoka, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+const socialImage =
+  "https://raw.githubusercontent.com/pitter775/profuturo-instituto/main/public/images/og-instituto-pro-futuro.png";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -19,9 +22,29 @@ const fredoka = Fredoka({
 });
 
 export const metadata: Metadata = {
-  title: "Instituto Pro Futuro | Educacao, infancia e impacto social",
+  title: "Instituto Pro Futuro | Associacao, educacao e impacto social",
   description:
-    "Site institucional do Instituto Pro Futuro, organizacao sem fins lucrativos dedicada a educacao, assistencia social, cultura, esporte e desenvolvimento comunitario.",
+    "Site institucional do Instituto Pro Futuro, associacao sem fins lucrativos dedicada a educacao, assistencia social, cultura, esporte e desenvolvimento comunitario.",
+  openGraph: {
+    title: "Instituto Pro Futuro",
+    description:
+      "Associacao sem fins lucrativos dedicada a educacao, assistencia social, cultura, esporte e desenvolvimento comunitario.",
+    images: [
+      {
+        url: socialImage,
+        width: 1200,
+        height: 630,
+        alt: "Instituto Pro Futuro",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Instituto Pro Futuro",
+    description:
+      "Associacao sem fins lucrativos dedicada a educacao, assistencia social, cultura, esporte e desenvolvimento comunitario.",
+    images: [socialImage],
+  },
 };
 
 export default function RootLayout({

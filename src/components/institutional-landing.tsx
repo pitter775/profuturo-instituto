@@ -30,19 +30,19 @@ import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion"
 
 const navItems = [
   ["Instituto", "#instituto"],
-  ["Escola", "#escola"],
-  ["Rotina", "#rotina"],
+  ["Associacao", "#associacao"],
+  ["Nucleos", "#nucleos"],
   ["Projetos", "#projetos"],
   ["Documentos", "#documentos"],
   ["Contato", "#contato"],
 ];
 
-const schoolSite = "https://educacaofuturo.org.br/";
+const educationProjectSite = "https://educacaofuturo.org.br/";
 
 const impactStats = [
   { label: "Fundacao", value: "2011" },
   { label: "CNPJ", value: "15.222.802/0001-13" },
-  { label: "Campanha citada em ata", value: "380 criancas" },
+  { label: "Campanha de Natal", value: "380 criancas" },
 ];
 
 const pillars = [
@@ -73,13 +73,13 @@ const pillars = [
 ];
 
 const routine = [
-  { icon: Baby, title: "Acolhida", text: "Chegada tranquila, vinculo e organizacao emocional." },
-  { icon: BookOpenCheck, title: "Descobertas", text: "Leitura, linguagem, numeros, artes e movimento." },
-  { icon: Gamepad2, title: "Brincar guiado", text: "Jogos educativos, cooperacao e autonomia." },
-  { icon: HeartHandshake, title: "Familias", text: "Escuta, eventos, orientacao e participacao ativa." },
+  { icon: Baby, title: "Infancia", text: "Acolhimento, protecao e experiencias que fortalecem vinculos." },
+  { icon: BookOpenCheck, title: "Educacao", text: "Leitura, linguagem, cultura, oficinas e desenvolvimento humano." },
+  { icon: Gamepad2, title: "Convivencia", text: "Jogos, esporte, recreacao, cooperacao e autonomia." },
+  { icon: HeartHandshake, title: "Familias", text: "Escuta, eventos, orientacao e participacao comunitaria." },
 ];
 
-const schoolNuclei = [
+const associationNuclei = [
   ["Nucleo Infantil", "Criancas de 4 meses a 4 anos, em periodo integral, em regime de maternal."],
   ["Nucleo de Formacao", "Criancas de 4 a 13 anos, em periodo semi-integral, com oficinas culturais, esportivas e musicais."],
   ["Nucleo Social", "Atendimento a familias, campanhas, eventos, voluntariado e apoio comunitario."],
@@ -165,38 +165,38 @@ export function InstitutionalLanding() {
   const heroY = useTransform(scrollYProgress, [0, 0.35], [0, 90]);
 
   return (
-    <main className="min-h-screen overflow-hidden bg-[#f7f4ed] text-[#06213f]">
+    <main className="min-h-screen overflow-hidden bg-[#fffaf0] text-[#0b1454]">
       <motion.div
-        className="fixed left-0 top-0 z-[60] h-1 origin-left bg-[#f4b43f]"
+        className="fixed left-0 top-0 z-[60] h-1 origin-left bg-[#ff7a00]"
         style={{ scaleX: scrollYProgress }}
       />
 
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/20 bg-[#003f7f]/90 backdrop-blur-xl">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-[#0b1454]/10 bg-white/92 shadow-[0_10px_35px_rgba(11,20,84,0.08)] backdrop-blur-xl">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <motion.a
             href="#"
-            className="flex items-center gap-3 text-white"
+            className="flex items-center gap-3 text-[#0b1454]"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
           >
-            <span className="relative block h-14 w-44 sm:w-52">
+            <span className="relative block h-16 w-28 sm:w-34">
               <Image
-                src="/images/logo-instituto-pro-futuro-white.png"
+                src="/images/logo-instituto-pro-futuro-oficial.png"
                 alt="Instituto Pro Futuro"
                 fill
-                sizes="(min-width: 640px) 208px, 176px"
+                sizes="(min-width: 640px) 136px, 112px"
                 className="object-contain"
                 priority
               />
             </span>
           </motion.a>
 
-          <nav className="hidden items-center rounded-md border border-white/14 bg-white/8 p-1 text-sm font-semibold text-white/82 lg:flex">
+          <nav className="hidden items-center rounded-md border border-[#0b1454]/10 bg-[#f4f7ff] p-1 text-sm font-semibold text-[#0b1454]/78 lg:flex">
             {navItems.map(([label, href]) => (
               <motion.a
                 key={href}
                 href={href}
-                className="relative px-4 py-2 transition hover:text-white"
+                className="relative px-4 py-2 transition hover:text-[#0b1454]"
                 onMouseEnter={() => setHoveredNav(href)}
                 onMouseLeave={() => setHoveredNav(null)}
                 whileTap={{ scale: 0.96 }}
@@ -204,7 +204,7 @@ export function InstitutionalLanding() {
                 {hoveredNav === href ? (
                   <motion.span
                     layoutId="nav-pill"
-                    className="absolute inset-0 rounded-md bg-white/14"
+                    className="absolute inset-0 rounded-md bg-white shadow-sm"
                     transition={{ type: "spring", stiffness: 420, damping: 32 }}
                   />
                 ) : null}
@@ -212,32 +212,32 @@ export function InstitutionalLanding() {
               </motion.a>
             ))}
             <motion.a
-              href={schoolSite}
+              href={educationProjectSite}
               target="_blank"
               rel="noreferrer"
-              className="relative px-4 py-2 text-[#f4b43f] transition hover:text-white"
+              className="relative px-4 py-2 text-[#a7198e] transition hover:text-[#0b1454]"
               whileTap={{ scale: 0.96 }}
             >
-              Site da escola
+              Educacao Futuro
             </motion.a>
           </nav>
 
           <div className="flex items-center gap-2">
             <motion.a
-              href={schoolSite}
+              href={educationProjectSite}
               target="_blank"
               rel="noreferrer"
-              className="hidden h-11 items-center gap-2 rounded-md bg-white px-4 text-sm font-bold text-[#06213f] shadow-sm transition hover:bg-[#f4b43f] sm:inline-flex"
+              className="hidden h-11 items-center gap-2 rounded-md bg-[#0b1454] px-4 text-sm font-bold text-white shadow-sm transition hover:bg-[#a7198e] sm:inline-flex"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.97 }}
             >
-              Site da escola
+              Educacao Futuro
               <MonitorUp size={17} aria-hidden="true" />
             </motion.a>
             <motion.button
               type="button"
               aria-label="Abrir menu"
-              className="inline-grid size-11 place-items-center rounded-md border border-white/18 text-white lg:hidden"
+              className="inline-grid size-11 place-items-center rounded-md border border-[#0b1454]/14 text-[#0b1454] lg:hidden"
               onClick={() => setMenuOpen((open) => !open)}
               whileTap={{ scale: 0.92 }}
             >
@@ -249,7 +249,7 @@ export function InstitutionalLanding() {
         <AnimatePresence>
           {menuOpen ? (
             <motion.nav
-              className="border-t border-white/12 bg-[#003f7f] px-4 py-4 lg:hidden"
+              className="border-t border-[#0b1454]/10 bg-white px-4 py-4 lg:hidden"
               initial={{ opacity: 0, y: -12 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
@@ -260,7 +260,7 @@ export function InstitutionalLanding() {
                   <motion.a
                     key={href}
                     href={href}
-                    className="rounded-md bg-white/9 px-4 py-3 font-semibold text-white"
+                    className="rounded-md bg-[#f4f7ff] px-4 py-3 font-semibold text-[#0b1454]"
                     onClick={() => setMenuOpen(false)}
                     initial={{ opacity: 0, x: -12 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -270,16 +270,16 @@ export function InstitutionalLanding() {
                   </motion.a>
                 ))}
                 <motion.a
-                  href={schoolSite}
+                  href={educationProjectSite}
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-md bg-[#f4b43f] px-4 py-3 font-bold text-[#06213f]"
+                  className="rounded-md bg-[#ff7a00] px-4 py-3 font-bold text-white"
                   onClick={() => setMenuOpen(false)}
                   initial={{ opacity: 0, x: -12 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: navItems.length * 0.035 }}
                 >
-                  Site da escola
+                  Educacao Futuro
                 </motion.a>
               </div>
             </motion.nav>
@@ -287,7 +287,7 @@ export function InstitutionalLanding() {
         </AnimatePresence>
       </header>
 
-      <section className="relative min-h-[94vh] overflow-hidden bg-[#003f7f] pt-20 text-white">
+      <section className="relative min-h-[94vh] overflow-hidden bg-[#0b1454] pt-20 text-white">
         <motion.div className="absolute inset-0" style={{ y: heroY }}>
           <Image
             src="/images/hero-educacao-infantil.png"
@@ -298,11 +298,11 @@ export function InstitutionalLanding() {
             sizes="100vw"
           />
         </motion.div>
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,37,82,0.98)_0%,rgba(0,63,127,0.76)_43%,rgba(1,87,170,0.16)_100%)]" />
-        <PlayShape className="left-[7%] top-[22%] h-12 w-12 bg-[#f4b43f]" />
-        <PlayShape className="bottom-[19%] left-[44%] h-8 w-24 bg-[#c4533f]" delay={0.8} />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,20,84,0.98)_0%,rgba(11,20,84,0.78)_43%,rgba(21,157,218,0.18)_100%)]" />
+        <PlayShape className="left-[7%] top-[22%] h-12 w-12 bg-[#ff7a00]" />
+        <PlayShape className="bottom-[19%] left-[44%] h-8 w-24 bg-[#a7198e]" delay={0.8} />
         <PlayShape className="right-[9%] top-[18%] h-10 w-10 bg-white/70" delay={1.2} />
-        <PlayShape className="bottom-[10%] right-[18%] h-14 w-14 bg-[#8cc8ff]" delay={1.8} />
+        <PlayShape className="bottom-[10%] right-[18%] h-14 w-14 bg-[#159dda]" delay={1.8} />
 
         <div className="relative mx-auto flex min-h-[calc(94vh-5rem)] max-w-7xl items-center px-4 py-20 sm:px-6 lg:px-8">
           <motion.div
@@ -321,31 +321,31 @@ export function InstitutionalLanding() {
               Organizacao sem fins lucrativos em Barueri
             </motion.p>
             <h1 className="font-kid mt-7 max-w-4xl text-6xl font-bold tracking-normal text-white sm:text-7xl lg:text-8xl">
-              Escola, cuidado e futuro no mesmo lugar
+              Transformando cuidado em futuro
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/84 md:text-xl">
-              Um projeto educacional infantil com base institucional solida,
-              acolhimento, brincadeira, aprendizagem e impacto social.
+              Uma associacao sem fins lucrativos dedicada a educacao, assistencia
+              social, cultura, convivencia e desenvolvimento comunitario.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <motion.a
-                href="#escola"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-[#f4b43f] px-6 text-base font-bold text-[#06213f] shadow-[0_18px_40px_rgba(244,180,63,0.28)] transition hover:bg-[#ffd26f]"
+                href="#associacao"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-[#ff7a00] px-6 text-base font-bold text-white shadow-[0_18px_40px_rgba(255,122,0,0.26)] transition hover:bg-[#f5b31c]"
                 whileHover={{ y: -3, scale: 1.01 }}
                 whileTap={{ scale: 0.97 }}
               >
-                Conhecer a escola
+                Conhecer a associacao
                 <BookOpenCheck size={19} aria-hidden="true" />
               </motion.a>
               <motion.a
-                href={schoolSite}
+                href={educationProjectSite}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-md border border-white/28 px-6 text-base font-bold text-white backdrop-blur transition hover:bg-white/12"
                 whileHover={{ y: -3, scale: 1.01 }}
                 whileTap={{ scale: 0.97 }}
               >
-                Abrir site da escola
+                Projeto Educacao Futuro
                 <MonitorUp size={19} aria-hidden="true" />
               </motion.a>
             </div>
@@ -422,7 +422,7 @@ export function InstitutionalLanding() {
         </div>
       </section>
 
-      <section id="escola" className="relative bg-[#003f7f] px-4 py-24 text-white sm:px-6 lg:px-8">
+      <section id="associacao" className="relative bg-[#0b1454] px-4 py-24 text-white sm:px-6 lg:px-8">
         <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.08)_0_1px,transparent_1px_28px)]" />
         <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <motion.div
@@ -434,14 +434,14 @@ export function InstitutionalLanding() {
           >
             <p className="inline-flex items-center gap-2 rounded-md bg-white/10 px-3 py-2 text-sm font-bold uppercase tracking-[0.16em] text-[#f4b43f]">
               <Baby size={17} aria-hidden="true" />
-              Escola de criancas
+              Associacao
             </p>
             <h2 className="font-kid mt-5 text-4xl font-bold tracking-normal md:text-6xl">
-              Um espaco educativo para aprender, brincar e pertencer
+              Uma rede de cuidado, educacao e convivencia
             </h2>
             <p className="mt-6 text-lg leading-8 text-white/78">
-              Um ambiente acolhedor para a primeira infancia, com rotina pedagogica,
-              criatividade, cuidado e vinculo com as familias.
+              A associacao atua junto a criancas, familias e comunidade, promovendo
+              oportunidades por meio de projetos sociais, educacionais e culturais.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <motion.a
@@ -450,18 +450,18 @@ export function InstitutionalLanding() {
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.97 }}
               >
-                Interesse em matricula
+                Fale com a associacao
                 <ArrowRight size={18} aria-hidden="true" />
               </motion.a>
               <motion.a
-                href={schoolSite}
+                href={educationProjectSite}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-md border border-white/22 px-5 font-bold text-white transition hover:bg-white/10"
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.97 }}
               >
-                Site da escola
+                Projeto Educacao Futuro
               </motion.a>
             </div>
           </motion.div>
@@ -489,12 +489,12 @@ export function InstitutionalLanding() {
         </div>
       </section>
 
-      <section id="rotina" className="bg-white px-4 py-24 sm:px-6 lg:px-8">
+      <section id="nucleos" className="bg-white px-4 py-24 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
-            eyebrow="Experiencia infantil"
-            title="A escola precisa parecer viva antes mesmo da visita"
-            text="A proposta pedagogica valoriza movimento, ludicidade, acolhimento e desenvolvimento integral."
+            eyebrow="Nucleos de atuacao"
+            title="Projetos que acolhem, formam e aproximam a comunidade"
+            text="As iniciativas do Instituto unem educacao, cultura, esporte, assistencia social e participacao familiar."
           />
           <div className="mt-14 grid gap-5 lg:grid-cols-3">
             {projects.map(([title, text, Icon], index) => (
@@ -523,7 +523,7 @@ export function InstitutionalLanding() {
             ))}
           </div>
           <div className="mt-8 grid gap-4 lg:grid-cols-3">
-            {schoolNuclei.map(([title, text], index) => (
+            {associationNuclei.map(([title, text], index) => (
               <motion.article
                 key={title}
                 className="rounded-lg border border-[#c9d9ef] bg-[#eaf4ff] p-6"
@@ -570,7 +570,7 @@ export function InstitutionalLanding() {
               viewport={{ once: true }}
               transition={{ duration: 0.65 }}
             >
-              {["Matriculas", "Campanhas", "Oficinas", "Voluntariado"].map((item) => (
+              {["Atendimento", "Campanhas", "Oficinas", "Voluntariado"].map((item) => (
                 <motion.div
                   key={item}
                   className="rounded-lg border border-[#d9d1c3] bg-white p-5 font-kid text-2xl font-bold text-[#06213f]"
@@ -652,8 +652,8 @@ export function InstitutionalLanding() {
               Familias, parceiros e apoiadores entram por aqui
             </h2>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-white/78">
-              Entre em contato para saber mais sobre atendimento, matriculas, parcerias
-              e formas de apoiar o Instituto.
+              Entre em contato para saber mais sobre atendimento, projetos, parcerias
+              e formas de apoiar o Instituto Pro Futuro.
             </p>
           </motion.div>
           <motion.div
@@ -664,10 +664,10 @@ export function InstitutionalLanding() {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             {[
-              [MapPin, "Rua Orbita 182", "Chacara Solar Jaguari, Santana de Parnaiba."],
+              [MapPin, "Rua Guarantan, 251", "Engenho Novo, Barueri, Sao Paulo."],
               [PhoneCall, "11 4257-2198", "Atendimento a familias, parceiros e comunidade."],
               [Mail, "secretaria@educacaofuturo.org.br", "Canal para informacoes institucionais e educacionais."],
-              [MonitorUp, "educacaofuturo.org.br", "Acesse tambem o site da escola."],
+              [MonitorUp, "educacaofuturo.org.br", "Conheca tambem o projeto Educacao Futuro."],
             ].map(([Icon, title, text]) => (
               <div key={title as string} className="flex gap-4 border-b border-white/12 py-5 first:pt-0 last:border-b-0 last:pb-0">
                 <Icon className="shrink-0 text-[#f4b43f]" size={24} aria-hidden="true" />
