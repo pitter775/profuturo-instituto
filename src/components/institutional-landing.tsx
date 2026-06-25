@@ -304,23 +304,23 @@ export function InstitutionalLanding() {
         <PlayShape className="right-[9%] top-[18%] h-10 w-10 bg-white/70" delay={1.2} />
         <PlayShape className="bottom-[10%] right-[18%] h-14 w-14 bg-[#159dda]" delay={1.8} />
 
-        <div className="relative mx-auto flex min-h-[calc(94vh-5rem)] max-w-7xl items-center px-4 py-20 sm:px-6 lg:px-8">
+        <div className="relative mx-auto flex min-h-[calc(94vh-5rem)] max-w-7xl items-center px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
           <motion.div
-            className="max-w-3xl"
+            className="w-full max-w-3xl"
             initial={{ opacity: 0, y: 34 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           >
             <motion.p
-              className="inline-flex items-center gap-2 rounded-md border border-white/20 bg-white/10 px-3 py-2 text-sm font-semibold text-white/90 backdrop-blur"
+              className="inline-flex max-w-full items-center gap-2 rounded-md border border-white/20 bg-white/10 px-3 py-2 text-sm font-semibold leading-5 text-white/90 backdrop-blur"
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.25 }}
             >
               <ShieldCheck size={17} aria-hidden="true" />
-              Organizacao sem fins lucrativos em Barueri
+              <span className="min-w-0">Organizacao sem fins lucrativos em Barueri</span>
             </motion.p>
-            <h1 className="font-kid mt-7 max-w-4xl text-6xl font-bold tracking-normal text-white sm:text-7xl lg:text-8xl">
+            <h1 className="font-kid mt-7 max-w-full text-[2.75rem] font-bold leading-[1.08] tracking-normal text-white sm:text-7xl lg:text-8xl">
               Transformando cuidado em futuro
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/84 md:text-xl">
@@ -330,7 +330,7 @@ export function InstitutionalLanding() {
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <motion.a
                 href="#associacao"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-[#ff7a00] px-6 text-base font-bold text-white shadow-[0_18px_40px_rgba(255,122,0,0.26)] transition hover:bg-[#f5b31c]"
+                className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md bg-[#ff7a00] px-4 py-3 text-center text-base font-bold leading-5 text-white shadow-[0_18px_40px_rgba(255,122,0,0.26)] transition hover:bg-[#f5b31c] sm:w-auto sm:px-6"
                 whileHover={{ y: -3, scale: 1.01 }}
                 whileTap={{ scale: 0.97 }}
               >
@@ -341,7 +341,7 @@ export function InstitutionalLanding() {
                 href={educationProjectSite}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-md border border-white/28 px-6 text-base font-bold text-white backdrop-blur transition hover:bg-white/12"
+                className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md border border-white/28 px-4 py-3 text-center text-base font-bold leading-5 text-white backdrop-blur transition hover:bg-white/12 sm:w-auto sm:px-6"
                 whileHover={{ y: -3, scale: 1.01 }}
                 whileTap={{ scale: 0.97 }}
               >
