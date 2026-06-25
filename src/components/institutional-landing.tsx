@@ -440,9 +440,8 @@ export function InstitutionalLanding() {
               Um espaco educativo para aprender, brincar e pertencer
             </h2>
             <p className="mt-6 text-lg leading-8 text-white/78">
-              A frente infantil ganha uma comunicacao mais acolhedora, com rotina
-              pedagogica, criatividade, vinculo com familias e identidade visual
-              propria dentro do Instituto.
+              Um ambiente acolhedor para a primeira infancia, com rotina pedagogica,
+              criatividade, cuidado e vinculo com as familias.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <motion.a
@@ -462,7 +461,7 @@ export function InstitutionalLanding() {
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.97 }}
               >
-                Site atual da escola
+                Site da escola
               </motion.a>
             </div>
           </motion.div>
@@ -495,7 +494,7 @@ export function InstitutionalLanding() {
           <SectionTitle
             eyebrow="Experiencia infantil"
             title="A escola precisa parecer viva antes mesmo da visita"
-            text="A interface agora comunica movimento, ludicidade e acolhimento, sem perder credibilidade institucional."
+            text="A proposta pedagogica valoriza movimento, ludicidade, acolhimento e desenvolvimento integral."
           />
           <div className="mt-14 grid gap-5 lg:grid-cols-3">
             {projects.map(([title, text, Icon], index) => (
@@ -561,8 +560,7 @@ export function InstitutionalLanding() {
               <h3 className="font-kid mt-6 text-4xl font-bold">Frentes integradas</h3>
               <p className="mt-5 max-w-2xl text-lg leading-8 text-white/78">
                 Educacao infantil, assistencia social, cultura, voluntariado e
-                parcerias podem aparecer como programas vivos, com inscricoes,
-                campanhas e resultados.
+                parcerias em programas que fortalecem criancas, familias e comunidade.
               </p>
             </motion.div>
             <motion.div
@@ -654,8 +652,8 @@ export function InstitutionalLanding() {
               Familias, parceiros e apoiadores entram por aqui
             </h2>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-white/78">
-              A proxima etapa recomendada e conectar WhatsApp, formulario de interesse
-              em matricula e canais oficiais do Instituto.
+              Entre em contato para saber mais sobre atendimento, matriculas, parcerias
+              e formas de apoiar o Instituto.
             </p>
           </motion.div>
           <motion.div
@@ -667,9 +665,9 @@ export function InstitutionalLanding() {
           >
             {[
               [MapPin, "Rua Orbita 182", "Chacara Solar Jaguari, Santana de Parnaiba."],
-              [PhoneCall, "11 4257-2198", "Telefone publicado no site da escola."],
-              [Mail, "secretaria@educacaofuturo.org.br", "E-mail publicado no site da escola."],
-              [MonitorUp, "educacaofuturo.org.br", "Link externo para o site atual da escola."],
+              [PhoneCall, "11 4257-2198", "Atendimento a familias, parceiros e comunidade."],
+              [Mail, "secretaria@educacaofuturo.org.br", "Canal para informacoes institucionais e educacionais."],
+              [MonitorUp, "educacaofuturo.org.br", "Acesse tambem o site da escola."],
             ].map(([Icon, title, text]) => (
               <div key={title as string} className="flex gap-4 border-b border-white/12 py-5 first:pt-0 last:border-b-0 last:pb-0">
                 <Icon className="shrink-0 text-[#f4b43f]" size={24} aria-hidden="true" />
