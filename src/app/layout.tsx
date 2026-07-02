@@ -22,13 +22,13 @@ const fredoka = Fredoka({
 });
 
 export const metadata: Metadata = {
-  title: "Instituto Pro Futuro | Associacao, educacao e impacto social",
+  title: "Instituto Pro Futuro | Associação, educação e impacto social",
   description:
-    "Site institucional do Instituto Pro Futuro, associacao sem fins lucrativos dedicada a educacao, assistencia social, cultura, esporte e desenvolvimento comunitario.",
+    "Site institucional do Instituto Pro Futuro, associação sem fins lucrativos dedicada à educação, assistência social, cultura, esporte e desenvolvimento comunitário.",
   openGraph: {
     title: "Instituto Pro Futuro",
     description:
-      "Associacao sem fins lucrativos dedicada a educacao, assistencia social, cultura, esporte e desenvolvimento comunitario.",
+      "Associação sem fins lucrativos dedicada à educação, assistência social, cultura, esporte e desenvolvimento comunitário.",
     images: [
       {
         url: socialImage,
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Instituto Pro Futuro",
     description:
-      "Associacao sem fins lucrativos dedicada a educacao, assistencia social, cultura, esporte e desenvolvimento comunitario.",
+      "Associação sem fins lucrativos dedicada à educação, assistência social, cultura, esporte e desenvolvimento comunitário.",
     images: [socialImage],
   },
 };

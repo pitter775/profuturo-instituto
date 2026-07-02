@@ -30,8 +30,8 @@ import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion"
 
 const navItems = [
   ["Instituto", "#instituto"],
-  ["Associacao", "#associacao"],
-  ["Nucleos", "#nucleos"],
+  ["Associação", "#associacao"],
+  ["Núcleos", "#nucleos"],
   ["Projetos", "#projetos"],
   ["Documentos", "#documentos"],
   ["Contato", "#contato"],
@@ -40,9 +40,9 @@ const navItems = [
 const educationProjectSite = "https://educacaofuturo.org.br/";
 
 const impactStats = [
-  { label: "Fundacao", value: "2011" },
+  { label: "Fundação", value: "2011" },
   { label: "CNPJ", value: "15.222.802/0001-13" },
-  { label: "Campanha de Natal", value: "380 criancas" },
+  { label: "Campanha de Natal", value: "380 crianças" },
 ];
 
 const pillars = [
@@ -55,51 +55,51 @@ const pillars = [
   {
     icon: HandHeart,
     title: "Cuidar",
-    text: "Acoes com familias, infancia, seguranca alimentar e fortalecimento comunitario.",
+    text: "Ações com famílias, infância, segurança alimentar e fortalecimento comunitário.",
     color: "#c4533f",
   },
   {
     icon: Sparkles,
     title: "Criar",
-    text: "Cultura, brincadeiras, esporte, recreacao e vivencias que ampliam repertorios.",
+    text: "Cultura, brincadeiras, esporte, recreação e vivências que ampliam repertórios.",
     color: "#f4b43f",
   },
   {
     icon: Building2,
     title: "Conectar",
-    text: "Parcerias com orgaos publicos, empresas, fundacoes, associacoes e redes de apoio.",
+    text: "Parcerias com órgãos públicos, empresas, fundações, associações e redes de apoio.",
     color: "#5d65c9",
   },
 ];
 
 const routine = [
-  { icon: Baby, title: "Infancia", text: "Acolhimento, protecao e experiencias que fortalecem vinculos." },
-  { icon: BookOpenCheck, title: "Educacao", text: "Leitura, linguagem, cultura, oficinas e desenvolvimento humano." },
-  { icon: Gamepad2, title: "Convivencia", text: "Jogos, esporte, recreacao, cooperacao e autonomia." },
-  { icon: HeartHandshake, title: "Familias", text: "Escuta, eventos, orientacao e participacao comunitaria." },
+  { icon: Baby, title: "Infância", text: "Acolhimento, proteção e experiências que fortalecem vínculos." },
+  { icon: BookOpenCheck, title: "Educação", text: "Leitura, linguagem, cultura, oficinas e desenvolvimento humano." },
+  { icon: Gamepad2, title: "Convivência", text: "Jogos, esporte, recreação, cooperação e autonomia." },
+  { icon: HeartHandshake, title: "Famílias", text: "Escuta, eventos, orientação e participação comunitária." },
 ];
 
 const associationNuclei = [
-  ["Nucleo Infantil", "Criancas de 4 meses a 4 anos, em periodo integral, em regime de maternal."],
-  ["Nucleo de Formacao", "Criancas de 4 a 13 anos, em periodo semi-integral, com oficinas culturais, esportivas e musicais."],
-  ["Nucleo Social", "Atendimento a familias, campanhas, eventos, voluntariado e apoio comunitario."],
+  ["Núcleo Infantil", "Crianças de 4 meses a 4 anos, em período integral, em regime de maternal."],
+  ["Núcleo de Formação", "Crianças de 4 a 13 anos, em período semi-integral, com oficinas culturais, esportivas e musicais."],
+  ["Núcleo Social", "Atendimento a famílias, campanhas, eventos, voluntariado e apoio comunitário."],
 ];
 
 const projects = [
-  ["Pedagogia viva", "Oficinas, reforco, leitura, brincadeiras e tecnologias para fins sociais.", Palette],
-  ["Corpo e movimento", "Esporte, musica, recreacao, jogos educativos e convivencia.", Music],
-  ["Protecao social", "Acoes com familias, voluntariado, redes de apoio e cidadania.", UsersRound],
+  ["Pedagogia viva", "Oficinas, reforço, leitura, brincadeiras e tecnologias para fins sociais.", Palette],
+  ["Corpo e movimento", "Esporte, música, recreação, jogos educativos e convivência.", Music],
+  ["Proteção social", "Ações com famílias, voluntariado, redes de apoio e cidadania.", UsersRound],
 ];
 
 const documents = [
   {
     title: "Estatuto Social",
-    detail: "Documento institucional com denominacao, finalidade, governanca e regras do IPF.",
+    detail: "Documento institucional com denominação, finalidade, governança e regras do IPF.",
     href: "/documents/estatuto-pro-futuro-2026.pdf",
   },
   {
     title: "Ata da Assembleia Geral",
-    detail: "Registro de assembleia, eleicao, posse e mandato da diretoria institucional.",
+    detail: "Registro de assembleia, eleição, posse e mandato da diretoria institucional.",
     href: "/documents/ata-pro-futuro-2026.pdf",
   },
 ];
@@ -218,7 +218,7 @@ export function InstitutionalLanding() {
               className="relative px-4 py-2 text-[#a7198e] transition hover:text-[#0b1454]"
               whileTap={{ scale: 0.96 }}
             >
-              Educacao Futuro
+              Educação Futuro
             </motion.a>
           </nav>
 
@@ -231,7 +231,7 @@ export function InstitutionalLanding() {
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.97 }}
             >
-              Educacao Futuro
+              Educação Futuro
               <MonitorUp size={17} aria-hidden="true" />
             </motion.a>
             <motion.button
@@ -279,7 +279,7 @@ export function InstitutionalLanding() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: navItems.length * 0.035 }}
                 >
-                  Educacao Futuro
+                  Educação Futuro
                 </motion.a>
               </div>
             </motion.nav>
@@ -291,7 +291,7 @@ export function InstitutionalLanding() {
         <motion.div className="absolute inset-0" style={{ y: heroY }}>
           <Image
             src="/images/hero-educacao-infantil.png"
-            alt="Criancas em ambiente educacional acolhedor"
+            alt="Crianças em ambiente educacional acolhedor"
             fill
             priority
             className="object-cover object-center opacity-[0.62]"
@@ -318,14 +318,14 @@ export function InstitutionalLanding() {
               transition={{ delay: 0.25 }}
             >
               <ShieldCheck size={17} aria-hidden="true" />
-              <span className="min-w-0">Organizacao sem fins lucrativos em Barueri</span>
+              <span className="min-w-0">Organização sem fins lucrativos em Barueri</span>
             </motion.p>
             <h1 className="font-kid mt-7 max-w-full text-[2.75rem] font-bold leading-[1.08] tracking-normal text-white sm:text-7xl lg:text-8xl">
               Transformando cuidado em futuro
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/84 md:text-xl">
-              Uma associacao sem fins lucrativos dedicada a educacao, assistencia
-              social, cultura, convivencia e desenvolvimento comunitario.
+              Uma associação sem fins lucrativos dedicada à educação, assistência
+              social, cultura, convivência e desenvolvimento comunitário.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <motion.a
@@ -334,7 +334,7 @@ export function InstitutionalLanding() {
                 whileHover={{ y: -3, scale: 1.01 }}
                 whileTap={{ scale: 0.97 }}
               >
-                Conhecer a associacao
+                Conhecer a associação
                 <BookOpenCheck size={19} aria-hidden="true" />
               </motion.a>
               <motion.a
@@ -345,7 +345,7 @@ export function InstitutionalLanding() {
                 whileHover={{ y: -3, scale: 1.01 }}
                 whileTap={{ scale: 0.97 }}
               >
-                Projeto Educacao Futuro
+                Projeto Educação Futuro
                 <MonitorUp size={19} aria-hidden="true" />
               </motion.a>
             </div>
@@ -385,7 +385,7 @@ export function InstitutionalLanding() {
         <SectionTitle
           eyebrow="Institucional"
           title="Uma entidade criada para transformar comunidade em oportunidade"
-          text="O Instituto Pro Futuro atua sem fins lucrativos e orienta suas acoes para finalidades de relevancia publica e social."
+          text="O Instituto Pro Futuro atua sem fins lucrativos e orienta suas ações para finalidades de relevância pública e social."
         />
 
         <div className="mx-auto mt-14 grid max-w-7xl grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -434,13 +434,13 @@ export function InstitutionalLanding() {
           >
             <p className="inline-flex items-center gap-2 rounded-md bg-white/10 px-3 py-2 text-sm font-bold uppercase tracking-[0.16em] text-[#f4b43f]">
               <Baby size={17} aria-hidden="true" />
-              Associacao
+              Associação
             </p>
             <h2 className="font-kid mt-5 text-4xl font-bold tracking-normal md:text-6xl">
-              Uma rede de cuidado, educacao e convivencia
+              Uma rede de cuidado, educação e convivência
             </h2>
             <p className="mt-6 text-lg leading-8 text-white/78">
-              A associacao atua junto a criancas, familias e comunidade, promovendo
+              A associação atua junto a crianças, famílias e comunidade, promovendo
               oportunidades por meio de projetos sociais, educacionais e culturais.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -450,7 +450,7 @@ export function InstitutionalLanding() {
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.97 }}
               >
-                Fale com a associacao
+                Fale com a associação
                 <ArrowRight size={18} aria-hidden="true" />
               </motion.a>
               <motion.a
@@ -461,7 +461,7 @@ export function InstitutionalLanding() {
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.97 }}
               >
-                Projeto Educacao Futuro
+                Projeto Educação Futuro
               </motion.a>
             </div>
           </motion.div>
@@ -492,9 +492,9 @@ export function InstitutionalLanding() {
       <section id="nucleos" className="bg-white px-4 py-24 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
-            eyebrow="Nucleos de atuacao"
+            eyebrow="Núcleos de atuação"
             title="Projetos que acolhem, formam e aproximam a comunidade"
-            text="As iniciativas do Instituto unem educacao, cultura, esporte, assistencia social e participacao familiar."
+            text="As iniciativas do Instituto unem educação, cultura, esporte, assistência social e participação familiar."
           />
           <div className="mt-14 grid gap-5 lg:grid-cols-3">
             {projects.map(([title, text, Icon], index) => (
@@ -545,8 +545,8 @@ export function InstitutionalLanding() {
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow="Projetos"
-            title="Programas que conectam educacao, cuidado e cidadania"
-            text="A base estatutaria permite desenvolver iniciativas em educacao, assistencia social, cultura, esporte, saude, tecnologia, meio ambiente e qualificacao humana."
+            title="Programas que conectam educação, cuidado e cidadania"
+            text="A base estatutária permite desenvolver iniciativas em educação, assistência social, cultura, esporte, saúde, tecnologia, meio ambiente e qualificação humana."
           />
           <div className="mt-14 grid gap-4 lg:grid-cols-[1.15fr_0.85fr]">
             <motion.div
@@ -559,8 +559,8 @@ export function InstitutionalLanding() {
               <ClipboardCheck size={34} className="text-[#f4b43f]" aria-hidden="true" />
               <h3 className="font-kid mt-6 text-4xl font-bold">Frentes integradas</h3>
               <p className="mt-5 max-w-2xl text-lg leading-8 text-white/78">
-                Educacao infantil, assistencia social, cultura, voluntariado e
-                parcerias em programas que fortalecem criancas, familias e comunidade.
+                Educação infantil, assistência social, cultura, voluntariado e
+                parcerias em programas que fortalecem crianças, famílias e comunidade.
               </p>
             </motion.div>
             <motion.div
@@ -594,13 +594,13 @@ export function InstitutionalLanding() {
               transition={{ duration: 0.6 }}
             >
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#c4533f]">
-                Transparencia
+                Transparência
               </p>
               <h2 className="font-kid mt-4 text-4xl font-bold tracking-normal text-[#06213f] md:text-6xl">
                 Documentos institucionais
               </h2>
               <p className="mt-5 text-lg leading-8 text-[#58677a]">
-                Os documentos enviados foram adicionados ao site para consulta publica.
+                Os documentos enviados foram adicionados ao site para consulta pública.
               </p>
             </motion.div>
             <div className="grid gap-4">
@@ -649,7 +649,7 @@ export function InstitutionalLanding() {
               Contato
             </p>
             <h2 className="font-kid mt-4 text-4xl font-bold tracking-normal md:text-6xl">
-              Familias, parceiros e apoiadores entram por aqui
+              Famílias, parceiros e apoiadores entram por aqui
             </h2>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-white/78">
               Entre em contato para saber mais sobre atendimento, projetos, parcerias
@@ -664,10 +664,10 @@ export function InstitutionalLanding() {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             {[
-              [MapPin, "Rua Guarantan, 251", "Engenho Novo, Barueri, Sao Paulo."],
-              [PhoneCall, "11 4257-2198", "Atendimento a familias, parceiros e comunidade."],
-              [Mail, "secretaria@educacaofuturo.org.br", "Canal para informacoes institucionais e educacionais."],
-              [MonitorUp, "educacaofuturo.org.br", "Conheca tambem o projeto Educacao Futuro."],
+              [MapPin, "Rua Guarantan, 251", "Engenho Novo, Barueri, São Paulo."],
+              [PhoneCall, "11 4257-2198", "Atendimento a famílias, parceiros e comunidade."],
+              [Mail, "secretaria@educacaofuturo.org.br", "Canal para informações institucionais e educacionais."],
+              [MonitorUp, "educacaofuturo.org.br", "Conheça também o projeto Educação Futuro."],
             ].map(([Icon, title, text]) => (
               <div key={title as string} className="flex gap-4 border-b border-white/12 py-5 first:pt-0 last:border-b-0 last:pb-0">
                 <Icon className="shrink-0 text-[#f4b43f]" size={24} aria-hidden="true" />
