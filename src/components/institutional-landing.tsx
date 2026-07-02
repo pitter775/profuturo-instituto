@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import {
   ArrowRight,
@@ -161,8 +161,38 @@ function PlayShape({
 export function InstitutionalLanding() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [hoveredNav, setHoveredNav] = useState<string | null>(null);
+  const [activeSection, setActiveSection] = useState(navItems[0][1]);
   const { scrollYProgress } = useScroll();
   const heroY = useTransform(scrollYProgress, [0, 0.35], [0, 90]);
+
+  useEffect(() => {
+    const sectionIds = navItems.map(([, href]) => href.slice(1));
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((section): section is HTMLElement => Boolean(section));
+
+    if (!sections.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntry = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visibleEntry?.target.id) {
+          setActiveSection(`#${visibleEntry.target.id}`);
+        }
+      },
+      {
+        rootMargin: "-35% 0px -50% 0px",
+        threshold: [0.1, 0.25, 0.5, 0.75],
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#fffaf0] text-[#0b1454]">
@@ -196,15 +226,19 @@ export function InstitutionalLanding() {
               <motion.a
                 key={href}
                 href={href}
-                className="relative px-4 py-2 transition hover:text-[#0b1454]"
+                className={`relative px-4 py-2 transition hover:text-[#0b1454] ${
+                  activeSection === href ? "text-[#0b1454]" : ""
+                }`}
                 onMouseEnter={() => setHoveredNav(href)}
                 onMouseLeave={() => setHoveredNav(null)}
                 whileTap={{ scale: 0.96 }}
               >
-                {hoveredNav === href ? (
+                {hoveredNav === href || activeSection === href ? (
                   <motion.span
                     layoutId="nav-pill"
-                    className="absolute inset-0 rounded-md bg-white shadow-sm"
+                    className={`absolute inset-0 rounded-md bg-white shadow-sm ${
+                      activeSection === href ? "ring-1 ring-[#0157aa]/14" : ""
+                    }`}
                     transition={{ type: "spring", stiffness: 420, damping: 32 }}
                   />
                 ) : null}
@@ -260,7 +294,11 @@ export function InstitutionalLanding() {
                   <motion.a
                     key={href}
                     href={href}
-                    className="rounded-md bg-[#f4f7ff] px-4 py-3 font-semibold text-[#0b1454]"
+                    className={`rounded-md px-4 py-3 font-semibold text-[#0b1454] ${
+                      activeSection === href
+                        ? "bg-[#eaf4ff] ring-1 ring-[#0157aa]/18"
+                        : "bg-[#f4f7ff]"
+                    }`}
                     onClick={() => setMenuOpen(false)}
                     initial={{ opacity: 0, x: -12 }}
                     animate={{ opacity: 1, x: 0 }}
